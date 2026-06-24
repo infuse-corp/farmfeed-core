@@ -4959,7 +4959,7 @@ END;
 $$;
 
 
-ALTER FUNCTION "public"."util_get_all_harvest_from_group"("_farm_group_id" bigint) OWNER TO "authenticated";
+-- Removed: ALTER FUNCTION "public"."util_get_all_harvest_from_group"("_farm_group_id" bigint) OWNER TO "authenticated";
 
 
 CREATE OR REPLACE FUNCTION "public"."util_get_all_news"() RETURNS "json"
