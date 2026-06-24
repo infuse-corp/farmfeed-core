@@ -12948,7 +12948,8 @@ CREATE INDEX "user_permissions_user_id_index" ON "public"."user_permissions" USI
 
 
 
-CREATE OR REPLACE TRIGGER "Mobile Push Notification" AFTER INSERT ON "public"."notification" FOR EACH ROW EXECUTE FUNCTION "supabase_functions"."http_request"('https://epmtixqczpklpqlafynr.supabase.co/functions/v1/notify', 'POST', '{"Content-type":"application/json","Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVwbXRpeHFjenBrbHBxbGFmeW5yIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY2MDIwNzk4OSwiZXhwIjoxOTc1NzgzOTg5fQ.NPEKlthD1fHtqRKq-zIXLHW3nr0LoQghxCS3MYF2L4Y","Password":"9kIeiTaZ2J9HKoe11F4MsIO9"}', '{}', '10000');
+-- Removed: Database Webhook trigger pointing to production. Recreate via Supabase Dashboard on staging.
+-- CREATE OR REPLACE TRIGGER "Mobile Push Notification" AFTER INSERT ON "public"."notification" FOR EACH ROW EXECUTE FUNCTION "supabase_functions"."http_request"(...);
 
 
 
@@ -12956,7 +12957,8 @@ CREATE OR REPLACE TRIGGER "check_relay_detail" AFTER UPDATE ON "public"."dn_iot_
 
 
 
-CREATE OR REPLACE TRIGGER "notify-discord-new-device" AFTER INSERT OR UPDATE ON "public"."dn_iot_supply_list" FOR EACH ROW EXECUTE FUNCTION "supabase_functions"."http_request"('https://test-qc-farmfeed-web.demo-xiang.workers.dev/api/webhook/new-device', 'POST', '{"Content-type":"application/json","x-webhook-secret":"61a0d08ea3f53445d4554d2f3faa5580ccb369dd7502ecb5a94a382c2db7f82e"}', '{}', '5000');
+-- Removed: Database Webhook trigger pointing to external URL. Recreate via Supabase Dashboard on staging.
+-- CREATE OR REPLACE TRIGGER "notify-discord-new-device" AFTER INSERT OR UPDATE ON "public"."dn_iot_supply_list" FOR EACH ROW EXECUTE FUNCTION "supabase_functions"."http_request"(...);
 
 
 
@@ -12968,7 +12970,8 @@ CREATE OR REPLACE TRIGGER "on_ha_states_inserted" AFTER INSERT ON "public"."ha_s
 
 
 
-CREATE OR REPLACE TRIGGER "on_notification_insert_send_push" AFTER INSERT ON "public"."dn_tb_m_notifications" FOR EACH ROW EXECUTE FUNCTION "supabase_functions"."http_request"('https://epmtixqczpklpqlafynr.supabase.co/functions/v1/dn-send-push-notification', 'POST', '{"Content-type":"application/json","Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVwbXRpeHFjenBrbHBxbGFmeW5yIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY2MDIwNzk4OSwiZXhwIjoxOTc1NzgzOTg5fQ.NPEKlthD1fHtqRKq-zIXLHW3nr0LoQghxCS3MYF2L4Y"}', '{}', '5000');
+-- Removed: Database Webhook trigger pointing to production. Recreate via Supabase Dashboard on staging.
+-- CREATE OR REPLACE TRIGGER "on_notification_insert_send_push" AFTER INSERT ON "public"."dn_tb_m_notifications" FOR EACH ROW EXECUTE FUNCTION "supabase_functions"."http_request"(...);
 
 
 
